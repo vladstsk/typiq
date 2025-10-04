@@ -1,0 +1,35 @@
+{
+  "name": "@repo/config",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "release": "./release/cli.mjs"
+  },
+  "scripts": {
+    "clean": "git clean -xdf node_modules .turbo",
+    "format": "eslint"
+  },
+  "devDependencies": {
+    "@eslint/css": "^0.11.1",
+    "@eslint/js": "^9.36.0",
+    "@types/jest": "^30.0.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-turbo": "^2.5.8",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.4",
+    "typescript-eslint": "^8.44.1"
+  },
+  "exports": {
+    "./eslint/*": "./eslint/*.js",
+    "./jest/*": "./jest/*.js",
+    "./prettier": "./prettier/config.json",
+    "./typescript/*": "./typescript/*.json"
+  }
+}

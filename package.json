@@ -1,0 +1,26 @@
+{
+  "name": "@typiq/monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo clean && git clean -xdf node_modules .turbo out",
+    "dev": "turbo dev",
+    "format": "turbo format",
+    "test": "turbo test"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^18.19.129",
+    "turbo": "^2.5.8"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "packageManager": "npm@10.8.0",
+  "workspaces": [
+    "apps/*",
+    "config",
+    "packages/*"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@typiq/react",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsup",
+    "clean": "git clean -xdf node_modules .turbo dist coverage",
+    "dev": "tsup --watch",
+    "format": "eslint --fix --max-warnings 0",
+    "lint": "eslint --max-warnings 0",
+    "release": "release -p",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@repo/config": "*",
+    "tsup": "^8.5.0"
+  },
+  "peerDependencies": {
+    "typiq": "^0.0.1-alpha.0"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "license": "MIT",
+  "author": "Vladyslav Stasiuk <vladstsk@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladstsk/typiq.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  }
+}

@@ -1,7 +1,10 @@
 {
   "arrowParens": "always",
   "bracketSpacing": true,
-  "printWidth": 120,
+  "plugins": [
+    "prettier-plugin-multiline-arrays"
+  ],
+  "printWidth": 80,
   "proseWrap": "always",
   "semi": true,
   "singleAttributePerLine": false,

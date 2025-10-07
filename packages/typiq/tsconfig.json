@@ -5,8 +5,8 @@
       "DOM.Iterable"
     ],
     "paths": {
-      "~/types": [
-        "./src/types.ts"
+      "~/*": [
+        "./src/*.ts"
       ]
     }
   },

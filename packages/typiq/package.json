@@ -1,6 +1,6 @@
 {
   "name": "typiq",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "scripts": {
     "build": "tsup",
     "clean": "git clean -xdf node_modules .turbo dist coverage",

@@ -43,7 +43,10 @@ const configs = [
       },
     },
     rules: {
-      "@typescript-eslint/consistent-type-imports": ["error", { disallowTypeAnnotations: false }],
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { disallowTypeAnnotations: false },
+      ],
       "@typescript-eslint/no-unused-vars": "off",
       "no-console": "error",
     },
@@ -133,9 +136,17 @@ const configs = [
             "type",
             "interface",
             ["function", "class"],
-            ["declare-export-interface", "declare-export-function", "declare-export-class"],
+            [
+              "declare-export-interface",
+              "declare-export-function",
+              "declare-export-class",
+            ],
             ["export-interface", "export-function", "export-class"],
-            ["export-default-interface", "export-default-function", "export-default-class"],
+            [
+              "export-default-interface",
+              "export-default-function",
+              "export-default-class",
+            ],
           ],
           order: "asc",
           type: "natural",
@@ -162,7 +173,17 @@ const configs = [
       "perfectionist/sort-union-types": [
         "warn",
         {
-          groups: ["named", "literal", "keyword", "tuple", "operator", "nullish", "intersection", "union", "unknown"],
+          groups: [
+            "named",
+            "literal",
+            "keyword",
+            "tuple",
+            "operator",
+            "nullish",
+            "intersection",
+            "union",
+            "unknown",
+          ],
           order: "asc",
           type: "natural",
         },

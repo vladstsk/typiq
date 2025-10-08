@@ -16,7 +16,9 @@ function getPackageInfo() {
   const packagePath = path.join(process.cwd(), "package.json");
 
   if (!fs.existsSync(packagePath)) {
-    return log(colorize("❌  package.json not found in current directory.", "red"));
+    return log(
+      colorize("❌  package.json not found in current directory.", "red")
+    );
   }
 
   return JSON.parse(fs.readFileSync(packagePath, "utf-8"));
@@ -58,7 +60,12 @@ function main() {
   try {
     execute("git diff --quiet", { stdio: "pipe" });
   } catch {
-    log(colorize("❌  You have uncommitted changes. Please commit or stash them first.", "red"));
+    log(
+      colorize(
+        "❌  You have uncommitted changes. Please commit or stash them first.",
+        "red"
+      )
+    );
     return;
   }
 
@@ -73,7 +80,11 @@ function main() {
   // Update version
   log(colorize("📝  Updating version ", "blue"), colorize(tag, "cyan"));
 
-  if (["major", "minor", "patch", "premajor", "preminor", "prepatch"].includes(tag)) {
+  if (
+    ["major", "minor", "patch", "premajor", "preminor", "prepatch"].includes(
+      tag
+    )
+  ) {
     execute(`npm version ${tag} --no-git-tag-version`);
   } else {
     execute(`npm version prerelease --preid ${tag} --no-git-tag-version`);
@@ -107,7 +118,16 @@ function main() {
     log(colorize("📤  Publishing package...", "blue"));
 
     try {
-      if (["major", "minor", "patch", "premajor", "preminor", "prepatch"].includes(tag)) {
+      if (
+        [
+          "major",
+          "minor",
+          "patch",
+          "premajor",
+          "preminor",
+          "prepatch",
+        ].includes(tag)
+      ) {
         execute("npm publish");
       } else {
         execute(`npm publish --tag ${tag}`);
@@ -123,7 +143,9 @@ function main() {
     } catch {
       log(colorize("❌  Failed to publish package:", "red"));
       log(colorize("   Make sure you're logged in with 'npm login'", "yellow"));
-      return log(colorize("   And have publish permissions for this package", "yellow"));
+      return log(
+        colorize("   And have publish permissions for this package", "yellow")
+      );
     }
   }
 
